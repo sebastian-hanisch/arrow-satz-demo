@@ -32,12 +32,12 @@ PRESETS = {
     "Handbeispiel: zwei Wähler, zwei Alternativen": {"n": 2, "m": 2, "pareto": True, "iia": True, "nd": True, "domain": "alle"},
 }
 PRESET_HELP = {
-    "Arrow: zwei Wähler, drei Alternativen": "Voreinstellung: zwei Wähler, drei Alternativen, alle strikten Ordnungen, alle drei Axiome. Der Löser beweist aus 216 Variablen (36 Profile mal 6 Ergebnisordnungen), dass es keine Wohlfahrtsfunktion gibt; der kleinste unlösbare Kern hat 9 von 11 Bedingungen.",
-    "Drei Wähler, drei Alternativen": "Dasselbe mit drei Wählern: 216 Profile, 1.296 Variablen, wieder unlösbar; der kleinste Kern hat 10 von 12 Bedingungen.",
+    "Arrow: zwei Wähler, drei Alternativen": "Voreinstellung: zwei Wähler, drei Alternativen, alle strikten Ordnungen, alle drei Axiome. Der Löser meldet aus 216 Variablen (36 Profile mal 6 Ergebnisordnungen), dass es keine Wohlfahrtsfunktion gibt; der gefundene minimale unlösbare Kern hat 9 von 11 Bedingungen (es gibt auch einen mit 8).",
+    "Drei Wähler, drei Alternativen": "Dasselbe mit drei Wählern: 216 Profile, 1.296 Variablen, wieder unlösbar; der gefundene minimale Kern hat 10 von 12 Bedingungen (es gibt auch einen mit 9).",
     "Ohne Nichtdiktatur": "Pareto und Unabhängigkeit erlauben bei drei Wählern und drei Alternativen genau drei Wohlfahrtsfunktionen: die drei Diktaturen.",
     "Ohne Unabhängigkeit": "Ohne die Unabhängigkeit irrelevanter Alternativen gibt es viele Lösungen (die Aufzählung bricht bei 500 ab), zum Beispiel eine Rangfolge nach der Summe der Plätze (Borda) mit Gleichstandsbrecher.",
     "Ohne Pareto": "Ohne Pareto sind schon feste Rangfolgen (immer dasselbe Ergebnis) zulässig: ungleich einer Diktatur, unabhängig von den Wählern, aber auch ohne Rücksicht auf einstimmige Wünsche. Die Aufzählung bricht bei 500 ab.",
     "Nur zwei Alternativen": "Mit nur zwei Alternativen sind alle drei Axiome erfüllbar: bei drei Wählern gibt es genau 61 Wohlfahrtsfunktionen (64 mit Pareto und Unabhängigkeit, davon drei Diktaturen).",
-    "Einspitzige Ordnungen": "Sind nur einspitzige Ordnungen erlaubt (jede Anfangsstrecke ist ein Abschnitt der Achse A < B < C), sind alle drei Axiome bei drei Wählern und drei Alternativen erfüllbar; die Aufzählung bricht bei 500 ab.",
+    "Einspitzige Ordnungen": "Sind nur einspitzige Ordnungen erlaubt (jede Anfangsstrecke ist ein Abschnitt der Achse A < B < C), sind alle drei Axiome bei drei Wählern und drei Alternativen erfüllbar (allgemein für ungerade Wählerzahl); die Aufzählung bricht bei 500 ab.",
     "Handbeispiel: zwei Wähler, zwei Alternativen": "Von Hand: vier Profile, Pareto legt die zwei einstimmigen fest, bei Uneinigkeit gibt es vier Möglichkeiten, zwei davon sind Diktaturen. Es bleiben genau zwei Wohlfahrtsfunktionen: bei Uneinigkeit gewinnt immer A (oder immer B).",
 }

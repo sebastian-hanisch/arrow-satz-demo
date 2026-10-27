@@ -1,4 +1,4 @@
-"""Kern: Bedingungsgruppen, Löser, Aufzählung, kleinster Kern, Prüfer der Axiome, Art der Funktion. Jede Einheit an Mini-Fällen mit Handrechnung (DEMO-PLAYBOOK §1b)."""
+"""Kern: Bedingungsgruppen, Löser, Aufzählung, minimaler Kern, Prüfer der Axiome, Art der Funktion. Jede Einheit an Mini-Fällen mit Handrechnung (DEMO-PLAYBOOK §1b)."""
 
 from types import SimpleNamespace
 
@@ -182,7 +182,7 @@ def test_aufzählung_zählt_bis_zur_grenze_und_meldet_unvollständigkeit():
     assert len(default[0]) == 2 and C.SOLUTION_CAP == 500
 
 
-# --- Kleinster Kern ---------------------------------------------------------------------------------------------------------------------------
+# --- Minimaler Kern ---------------------------------------------------------------------------------------------------------------------------
 
 
 def test_kern_ist_unlösbar_und_minimal():

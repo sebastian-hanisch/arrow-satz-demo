@@ -1,7 +1,7 @@
 """Kern: Wohlfahrtsfunktionen als Erfüllbarkeitsproblem. Eine Wohlfahrtsfunktion bildet jedes Profil (je Wähler eine strikte Ordnung der m Alternativen) auf eine strikte Ordnung ab. Je Profil p und Ausgabeordnung o gibt es eine
 Variable x[p, o] (1: p wird auf o abgebildet), je Profil genau eine davon. Die Axiome sind lineare Bedingungen: Pareto (sind sich alle einig, a vor b zu stellen, tut es auch das Ergebnis), Unabhängigkeit irrelevanter Alternativen (IIA: die
 Ordnung eines Paares im Ergebnis hängt nur von der Ordnung dieses Paares bei den Wählern ab) und Nichtdiktatur (es gibt keinen Wähler, dessen Ordnung immer das Ergebnis ist). Gelöst wird mit CP-SAT; ist das Modell unlösbar, liefert ein
-Löschverfahren einen kleinsten unlösbaren Kern der Bedingungsgruppen. Ein unabhängiger Prüfer (`check_axioms`) rechnet die Axiome an einer gefundenen Funktion nach der Definition nach."""
+Löschverfahren einen minimalen unlösbaren Kern der Bedingungsgruppen (minimal, nicht der kleinste). Ein unabhängiger Prüfer (`check_axioms`) rechnet die Axiome an einer gefundenen Funktion nach der Definition nach."""
 
 import itertools
 import time
@@ -122,7 +122,7 @@ def enumerate_solutions(n: int, m: int, domain: str, groups, cap: int | None = N
 
 
 def minimal_core(n: int, m: int, domain: str, groups):
-    """Kleinster unlösbarer Kern der Gruppen (Löschverfahren: jede Gruppe wird entfernt, wenn der Rest unlösbar bleibt); None, wenn die Gruppen erfüllbar sind. Der Kern ist minimal, aber nicht eindeutig."""
+    """Minimaler unlösbarer Kern der Gruppen (Löschverfahren: jede Gruppe wird entfernt, wenn der Rest unlösbar bleibt); None, wenn die Gruppen erfüllbar sind. Der Kern ist minimal (nicht weiter kürzbar), aber nicht der kleinste und nicht eindeutig; er hängt von der Reihenfolge der Gruppen ab."""
     groups = list(groups)
     if is_feasible(n, m, domain, groups):
         return None

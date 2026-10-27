@@ -1,4 +1,4 @@
-"""Auswertung: Einstellungen, Lösbarkeit der gewählten Axiome, Beispielfunktion, Lösungszahlen, kleinster Kern, Tabellen, Verdikte als reine Funktionen (ohne Streamlit) und die festen Reihen."""
+"""Auswertung: Einstellungen, Lösbarkeit der gewählten Axiome, Beispielfunktion, Lösungszahlen, minimaler Kern, Tabellen, Verdikte als reine Funktionen (ohne Streamlit) und die festen Reihen."""
 
 import math
 from collections import Counter
@@ -62,7 +62,7 @@ def analyse(settings: Settings) -> Analysis:
 
 
 def core_of(settings: Settings):
-    """Kleinster unlösbarer Kern der gewählten Axiome (None, wenn sie erfüllbar sind oder das Modell zu groß ist)."""
+    """Minimaler unlösbarer Kern der gewählten Axiome (None, wenn sie erfüllbar sind oder das Modell zu groß ist)."""
     if not S.size_ok(settings.n, settings.m, settings.domain):
         return None
     return A.minimal_core(settings.n, settings.m, settings.domain, A.groups_for(settings.n, settings.m, settings.axioms()))
@@ -126,7 +126,7 @@ def verdict_state(a: Analysis):
     if a.result.status == "unbekannt":
         return "warning", f"Der Löser hat bei {where} in {C.TIME_LIMIT:.0f} Sekunden keine Antwort gefunden."
     if a.result.status == "unlösbar":
-        return "warning", f"Keine Wohlfahrtsfunktion erfüllt {axiom_text(s)} ({where}): der Löser beweist die Unmöglichkeit in {seconds_text(a.result.seconds)} aus {a.result.variables} Variablen."
+        return "warning", f"Keine Wohlfahrtsfunktion erfüllt {axiom_text(s)} ({where}): der Löser meldet die Unmöglichkeit in {seconds_text(a.result.seconds)} aus {a.result.variables} Variablen."
     only = ""
     if set(a.kinds) <= {k for k in a.kinds if k.startswith("Diktatur")} and a.complete:
         only = " Alle sind Diktaturen."

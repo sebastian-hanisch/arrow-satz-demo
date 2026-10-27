@@ -17,7 +17,7 @@ for name, p in C.PRESETS.items():
     a = ev.analyse(ev.Settings(**p))
     print(name, "|", ev.verdict_state(a)[1])
 
-print("KERNE (kleinster unlösbarer Kern, Löschverfahren)")
+print("KERNE (minimaler unlösbarer Kern, Löschverfahren)")
 for n, m in ((2, 3), (3, 3), (4, 3), (2, 4)):
     groups = A.groups_for(n, m, C.AXIOMS)
     t = time.time()
